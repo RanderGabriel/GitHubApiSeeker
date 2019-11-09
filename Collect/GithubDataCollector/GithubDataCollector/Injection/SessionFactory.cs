@@ -2,9 +2,6 @@
 using FluentNHibernate.Cfg.Db;
 using GithubDataCollector.Mapping;
 using NHibernate;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GithubDataCollector.Injection
 {
@@ -20,7 +17,9 @@ namespace GithubDataCollector.Injection
             IPersistenceConfigurer configDB = PostgreSQLConfiguration.PostgreSQL82.ConnectionString(_connection_string);
             var configMap = Fluently.Configure()
                 .Database(configDB)
-                .Mappings(c => c.FluentMappings.AddFromAssemblyOf<UserMap>());
+                .Mappings(c => c.FluentMappings.AddFromAssemblyOf<UserMap>()
+                .AddFromAssemblyOf<TopicsMap>()
+                .AddFromAssemblyOf<ReposMap>());
             _session = configMap.BuildSessionFactory();
             return _session;
         }

@@ -53,6 +53,10 @@
               "version": "[2.2.0, )",
               "autoReferenced": true
             },
+            "NEST": {
+              "target": "Package",
+              "version": "[7.4.0, )"
+            },
             "NHibernate": {
               "target": "Package",
               "version": "[5.2.6, )"

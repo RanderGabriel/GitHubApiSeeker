@@ -1,39 +1,42 @@
-﻿using System.Collections;
-using GithubDataCollector.Models;
+﻿using GithubDataCollector.Models;
 using NHibernate;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 
 namespace GithubDataCollector.Repository
 {
-    class UserRepository : IUserRepository
+    class RepoRepository : IRepoRepository
     {
         private readonly ISession _session;
 
-        public UserRepository(ISession session)
+        public RepoRepository(ISession session)
         {
             _session = session;
         }
-        public void Excluir(User user)
+        public void Excluir(Repo repo)
         {
             using (ITransaction tran = _session.BeginTransaction())
             {
-                _session.Delete(user);
+                _session.Delete(repo);
                 tran.Commit();
             }
         }
 
         public IEnumerable RecuperarTodos()
         {
-            string sql = "SELECT * FROM User";
+            string sql = "SELECT * FROM Repos";
             var query = _session.CreateSQLQuery(sql);
             var result = query.List();
             return result;
         }
 
-        public void Salvar(User user)
+        public void Salvar(Repo repo)
         {
             using (ITransaction tran = _session.BeginTransaction())
             {
-                _session.SaveOrUpdate(user);
+                _session.SaveOrUpdate(repo);
                 tran.Commit();
             }
         }
