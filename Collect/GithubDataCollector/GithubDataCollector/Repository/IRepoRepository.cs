@@ -11,6 +11,7 @@ namespace GithubDataCollector.Repository
 
         void Salvar(Repo repo);
         void Excluir(Repo repo);
+        void SalvarLista(IEnumerable<Repo> repos);
         IEnumerable RecuperarTodos();
     }
 }

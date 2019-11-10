@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using GithubDataCollector.Models;
 using NHibernate;
 
@@ -21,9 +22,17 @@ namespace GithubDataCollector.Repository
             }
         }
 
+        public int GetLastSaved()
+        {
+            string sql = "SELECT id FROM Users ORDER BY id DESC LIMIT 1";
+            var query = _session.CreateSQLQuery(sql);
+            int result = (int) (query.UniqueResult() != null ? query.UniqueResult() : 0);
+            return result;
+        }
+
         public IEnumerable RecuperarTodos()
         {
-            string sql = "SELECT * FROM User";
+            string sql = "SELECT * FROM Users";
             var query = _session.CreateSQLQuery(sql);
             var result = query.List();
             return result;
@@ -37,5 +46,17 @@ namespace GithubDataCollector.Repository
                 tran.Commit();
             }
         }
+
+        public void SalvarLista(IEnumerable<User> users)
+        {
+            using (ITransaction tran = _session.BeginTransaction())
+            {
+                foreach(var user in users) {
+                    _session.SaveOrUpdate(user);
+                }
+                tran.Commit();
+            }
+        }
+
     }
 }

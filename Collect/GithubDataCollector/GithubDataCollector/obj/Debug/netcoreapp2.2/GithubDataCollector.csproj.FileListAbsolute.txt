@@ -1,4 +1,3 @@
-C:\Users\Rander\Documents\TPS\IBD\TP2\Collect\GithubDataCollector\GithubDataCollector\obj\Debug\netcoreapp2.2\GithubDataCollector.csprojAssemblyReference.cache
 C:\Users\Rander\Documents\TPS\IBD\TP2\Collect\GithubDataCollector\GithubDataCollector\obj\Debug\netcoreapp2.2\GithubDataCollector.csproj.CoreCompileInputs.cache
 C:\Users\Rander\Documents\TPS\IBD\TP2\Collect\GithubDataCollector\GithubDataCollector\obj\Debug\netcoreapp2.2\GithubDataCollector.AssemblyInfoInputs.cache
 C:\Users\Rander\Documents\TPS\IBD\TP2\Collect\GithubDataCollector\GithubDataCollector\obj\Debug\netcoreapp2.2\GithubDataCollector.AssemblyInfo.cs
@@ -9,3 +8,4 @@ C:\Users\Rander\Documents\TPS\IBD\TP2\Collect\GithubDataCollector\GithubDataColl
 C:\Users\Rander\Documents\TPS\IBD\TP2\Collect\GithubDataCollector\GithubDataCollector\bin\Debug\netcoreapp2.2\GithubDataCollector.pdb
 C:\Users\Rander\Documents\TPS\IBD\TP2\Collect\GithubDataCollector\GithubDataCollector\obj\Debug\netcoreapp2.2\GithubDataCollector.dll
 C:\Users\Rander\Documents\TPS\IBD\TP2\Collect\GithubDataCollector\GithubDataCollector\obj\Debug\netcoreapp2.2\GithubDataCollector.pdb
+C:\Users\Rander\Documents\TPS\IBD\TP2\Collect\GithubDataCollector\GithubDataCollector\obj\Debug\netcoreapp2.2\GithubDataCollector.csprojAssemblyReference.cache

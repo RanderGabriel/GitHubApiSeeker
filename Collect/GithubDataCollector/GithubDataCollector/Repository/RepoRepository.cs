@@ -40,5 +40,17 @@ namespace GithubDataCollector.Repository
                 tran.Commit();
             }
         }
+
+        public void SalvarLista(IEnumerable<Repo> repos)
+        {
+            using (ITransaction tran = _session.BeginTransaction())
+            {
+                foreach (var repo in repos)
+                {
+                    _session.SaveOrUpdate(repo);
+                }
+                tran.Commit();
+            }
+        }
     }
 }
